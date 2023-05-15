@@ -20,12 +20,17 @@
         <div class="container-fluid">
            
         <div class="card">
-            <div class="card-header">
-                <h4> Edit Category</h4>
+        <div class="card-header card-header-primary card-header-icon">
+                <div class="card-icon">
+                    <i class="material-icons">assignment</i>
+                </div>
+                <h4 class="card-title">Edit Category
+                </h4>
+
             </div>
             <div class="card-body">
 
-           <form action="{{ url('update-product/'.$category->id)}}" method="POST" enctype="multipart/form-data">
+           <form action="{{ url('update-category/'.$category->id)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="row">

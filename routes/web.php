@@ -3,16 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\Admin\ProductController;
 
 
 
@@ -20,12 +11,22 @@ Route::get("/",[HomeController::class,"index"]);
 
 Route::get("/redirects",[HomeController::class,"redirects"]);
 
+// Categories 
 Route:: get("/categories", [CategoryController::class,"index"]);
 Route:: get("/add-category", [CategoryController::class,"addcategory"]);
 Route:: post("/insert-category", [CategoryController::class,"insertcategory"]);
-Route:: get("/edit-product/{id}", [CategoryController::class,"editproduct"]);
-Route:: put("/update-product/{id}", [CategoryController::class,"updateproduct"]);
-Route:: get("/delete-product/{id}", [CategoryController::class,"deleteproduct"]);
+Route:: get("/edit-category/{id}", [CategoryController::class,"editcategory"]);
+Route:: put("/update-category/{id}", [CategoryController::class,"updatecategory"]);
+Route:: get("/delete-category/{id}", [CategoryController::class,"deletecategory"]);
+
+// products
+Route:: get("/products", [ProductController ::class,"index"]);
+Route:: get("/add-product", [ProductController::class,"addproduct"]);
+Route:: post("/insert-product", [ProductController::class,"insertproduct"]);
+Route:: get("/edit-product/{id}", [ProductController::class,"editproduct"]);
+Route:: put("/update-product/{id}", [ProductController::class,"updateproduct"]);
+Route:: get("/delete-product/{id}", [ProductController::class,"deleteproduct"]);
+
 
 Route::middleware([
     'auth:sanctum',

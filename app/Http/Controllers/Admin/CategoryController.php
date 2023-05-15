@@ -42,17 +42,17 @@ class CategoryController extends Controller
         $category->meta_descrip =$request->input('meta_descrip');
         $category->meta_keywords =$request->input('meta_keywords');
         $category->save();
-        return redirect('/redirects')->with('status', "Category Added Successfully");
+        return redirect('/categories')->with('status', "Category Added Successfully");
 
     }
 
-    public function editproduct($id)
+    public function editcategory($id)
     {
         $category =Category::find($id);
-        return view('admin.category.editproduct', compact('category'));
+        return view('admin.category.editcategory', compact('category'));
     }
 
-    public function updateproduct(Request $request, $id)
+    public function updatecategory(Request $request, $id)
     {
         $category =Category::find($id);
         if($request->hasFile('image'))
@@ -77,11 +77,11 @@ class CategoryController extends Controller
         $category->meta_descrip =$request->input('meta_descrip');
         $category->meta_keywords =$request->input('meta_keywords');
         $category->update();
-        return redirect('/redirects')->with('status', "Category Updated Successfully");
+        return redirect('/categories')->with('status', "Category Updated Successfully");
     }
 
     
-    public function deleteproduct($id)
+    public function deletecategory($id)
     {
         $category =Category::find($id);
         if($category->image)

@@ -20,11 +20,12 @@
         <div class="container-fluid">
            
         <div class="card">
+           
         <div class="card-header card-header-primary card-header-icon">
                 <div class="card-icon">
                     <i class="material-icons">assignment</i>
                 </div>
-                <h4 class="card-title">Category Page
+                <h4 class="card-title">Product Page
                 </h4>
 
             </div>
@@ -35,23 +36,27 @@
   <thead>
     <tr>
       <th scope="col">Id</th>
+      <th scope="col">Category</th>
       <th scope="col">Name</th>
-      <th scope="col">Description</th>
+      <!-- <th scope="col">Original Price</th> -->
+      <th scope="col">Selling Price</th>
       <th scope="col">Image</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($category as $item)
+    @foreach($products as $item)
     <tr>
       <td>{{ $item->id}}</td>
+      <td>{{ $item->category->name}}</td>
       <td>{{ $item->name}}</td>
-      <td>{{ $item->description}}</td>
-      <td> <img src=" {{ asset('images/uploads/category/'.$item->image )}}" alt="image"></td>
+      <!-- <td>{{ $item->original_price}}</td> -->
+      <td>{{ $item->selling_price}}</td>
+      <td> <img src=" {{ asset('images/uploads/product/'.$item->image )}}" alt="image" style="width:70px;height:70px;"></td>
 
       <td> 
-         <a href="{{ url('edit-category/'. $item->id)}}" class="btn btn-primary">Edit</a >
-         <a href="{{ url('delete-category/'. $item->id)}}" class="btn btn-danger">Delete</a >
+         <a href="{{ url('edit-product/'. $item->id)}}" class="btn btn-primary">Edit</a >
+         <a href="{{ url('delete-product/'. $item->id)}}" class="btn btn-danger">Delete</a >
       </td>
     </tr>
     @endforeach
