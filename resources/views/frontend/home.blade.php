@@ -150,7 +150,7 @@
               <div class="down-content">
                 <a href="#"><h4>{{ $product->name }}</h4></a>
                 <h6>{{ $product->selling_price}}</h6>
-                <p>Lorem ipsume dolor sit amet, adipisicing elite. Itaque, corporis nulla aspernatur.</p>
+                <p></p>
                 <ul class="stars">
                   <li><i class="fa fa-star"></i></li>
                   <li><i class="fa fa-star"></i></li>
