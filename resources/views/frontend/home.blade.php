@@ -110,7 +110,7 @@
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
-      <div class="owl-banner owl-carousel">
+      <!-- <div class="owl-banner owl-carousel">
         <div class="banner-item-01">
           <div class="text-content">
             <h4>Best Offer</h4>
@@ -129,7 +129,7 @@
             <h2>Grab last minute deals</h2>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- Banner Ends Here -->
 
