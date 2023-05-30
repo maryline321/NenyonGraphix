@@ -112,16 +112,16 @@
   <div class="container" data-aos="fade-up">
     <div class="row gy-4">
       
-        @foreach ($category as $cate)
+    @foreach ($category as $categoryitem)
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
           <div class="member">
             <div class="member-img">
-              <a href="#"><img src="{{ asset('public/images/uploads/category/'.$cate->image )}}" alt="cher"></a>
+              <a href="#"><img src="{{ asset('images/uploads/category/'.$categoryitem->image) }}" alt="category" style="max-width: 100%; height: auto;"></a>
             </div>
             <div class="member-info">
-              <h4>{{ $cate->name }}</h4>
-              <p>{{ $cate->description }}</p>
-              
+              <h4>{{ $categoryitem->name }}</h4>
+              <!-- <span class="float-start">{{ $categoryitem->selling_price }}</span>
+              <span class="float-end"> <s>{{ $categoryitem->original_price }}</s></span> -->
 
             </div>
           </div>
