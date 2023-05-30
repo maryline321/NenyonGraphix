@@ -144,6 +144,35 @@
     </div>
   </div>
 </section>
+
+ <!-- ======= Featured Services Section ======= -->
+ <section id="team" class="team">
+  <div class="section-title">
+    <h2>Trending</h2>
+  </div>
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4">
+      
+        @foreach ($trending_category as $category)
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="member">
+            <div class="member-img">
+              <a href="#"><img src="{{ asset('images/uploads/category/'.$category->image) }}" alt="" style="max-width: 100%; height: auto;"></a>
+            </div>
+            <div class="member-info">
+            <h4>{{ $category->name }}</h4>
+              <p>{{ $category->description }}</p>
+
+            </div>
+          </div>
+        </div>
+        @endforeach
+
+    
+    </div>
+  </div>
+</section>
+  
   
 
     <!-- ======= Contact Section ======= -->

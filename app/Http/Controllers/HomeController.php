@@ -15,7 +15,8 @@ class HomeController extends Controller
     public function index()
     {
         $featured_products= Product::where('trending', '1')->take(15)->get();
-        return view("frontend.home", compact('featured_products'));
+        $trending_category= Category::where('popular', '1')->take(15)->get();
+        return view("frontend.home", compact('featured_products','trending_category'));
     }
 
     public function waterBottles()
