@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +20,7 @@ class HomeController extends Controller
 
     public function waterBottles()
     {
-        $category= Product::where('status', '1')->take(15)->get();
+        $category= Category::where('status', '0')->take(15)->get();
         return view("frontend.category", compact('category'));
     }
 
