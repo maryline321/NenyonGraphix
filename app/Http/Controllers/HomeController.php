@@ -25,6 +25,41 @@ class HomeController extends Controller
         return view("frontend.category", compact('category'));
     }
 
+    public function viewcategory($slug)
+    {
+        if(Category::where('slug', $slug)->exists())
+        {
+            $category= Category::where('slug', $slug)->first();
+            $products= Product::where('category_id', $category->id)->where('status','1')->get();
+            return view('frontend.products.index',compact('category', 'products'));
+        }
+        else{
+            return redirect('/')->with('status', "Slug does not exists");
+        }
+    }
+
+    public function productview($category_slug,$product_slug)
+    {
+       if(Category::where('slug', $category_slug)->exists())
+       {
+        if(Product::where('slug', $product_slug)->exists())
+        {   
+
+            $products= Product::where('slug', $product_slug)->first();
+            return view('frontend.products.view',compact('products'));
+        }
+        else{
+
+            return redirect('/')->with('status', "The link is broken");
+        }
+       }
+       else{
+
+        return redirect('/')->with('status', "No Category found");
+    }
+    }
+
+
     public function redirects()
     {
         $role_as=Auth::user()->role_as;

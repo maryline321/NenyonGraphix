@@ -10,24 +10,22 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css"/>
-
+  <link href="../assets/css/style.css" rel="stylesheet">
 
 </head>
 
@@ -103,32 +101,22 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Welcome to <span>Nenyon Graphic</span></h1>
-      <h2 style="color: black;">Printing Services in Kenya. Get Noticed in and out of your business.</h2>
-      <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
     <section id="team" class="team">
   <div class="section-title">
-    <h2>Featured Products</h2>
+    <h2>{{ $category->name}}</h2>
   </div>
   <div class="container" data-aos="fade-up">
     <div class="row gy-4">
       
-        @foreach ($featured_products as $product)
-        <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        @foreach ($products as $product)
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <a href="{{ url('category/'.$category->slug.'/'.$product->slug) }}">
           <div class="member">
             <div class="member-img">
-              <a href="#"><img src="{{ asset('images/uploads/product/'.$product->image) }}" alt="" style="max-width: 100%; height: auto;"></a>
+              <img src="{{ asset('images/uploads/product/'.$product->image) }}" alt="" style="max-width: 100%; height: auto;">
             </div>
             <div class="member-info">
               <h4>{{ $product->name }}</h4>
@@ -136,36 +124,6 @@
               <span class="float-end"> <s>{{ $product->original_price }}</s></span>
 
             </div>
-          </div>
-        </div>
-        @endforeach
-
-    
-    </div>
-  </div>
-</section>
-
- <!-- ======= Featured Services Section ======= -->
- <section id="team" class="team">
-  <div class="section-title">
-    <h2>Trending</h2>
-  </div>
-  <div class="container" data-aos="fade-up">
-    <div class="row gy-4">
-      
-        @foreach ($trending_category as $tcategory)
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-        <a href="{{ url('view-category/'.$tcategory->slug) }}">
-          <div class="member">
-            <div class="member-img">
-              <img src="{{ asset('images/uploads/category/'.$tcategory->image) }}" alt="" style="max-width: 100%; height: auto;">
-            </div>
-            <div class="member-info">
-            <h4>{{ $tcategory->name }}</h4>
-              <p>{{ $tcategory->description }}</p>
-
-            </div>
-         
           </div>
         </a>
         </div>
@@ -175,7 +133,6 @@
     </div>
   </div>
 </section>
-  
   
 
     <!-- ======= Contact Section ======= -->
@@ -336,45 +293,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="../assets/vendor/aos/aos.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    $('.carousel').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1
-          }
-        }
-      ]
-    });
-  });
-</script>
+  <script src="../assets/js/main.js"></script>
 
 </body>
 

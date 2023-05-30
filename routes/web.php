@@ -27,6 +27,8 @@ Route:: put("/update-product/{id}", [ProductController::class,"updateproduct"]);
 Route:: get("/delete-product/{id}", [ProductController::class,"deleteproduct"]);
 
 Route:: get("/water-bottles", [HomeController::class,"waterBottles"]);
+Route:: get("/view-category/{slug}", [HomeController::class,"viewcategory"]); 
+Route:: get("/category/{category_slug}/{product_slug}", [HomeController::class,"productview"]); 
 
 Route::middleware([
     'auth:sanctum',

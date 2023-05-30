@@ -114,9 +114,10 @@
       
     @foreach ($category as $categoryitem)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <a href="{{ url('view-category/'.$categoryitem->slug) }}">
           <div class="member">
             <div class="member-img">
-              <a href="#"><img src="{{ asset('images/uploads/category/'.$categoryitem->image) }}" alt="category" style="max-width: 100%; height: auto;"></a>
+             <img src="{{ asset('images/uploads/category/'.$categoryitem->image) }}" alt="category" style="max-width: 100%; height: auto;">
             </div>
             <div class="member-info">
               <h4>{{ $categoryitem->name }}</h4>
@@ -124,6 +125,7 @@
 
             </div>
           </div>
+          </a>
         </div>
         @endforeach
 
