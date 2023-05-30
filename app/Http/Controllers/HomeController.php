@@ -16,6 +16,12 @@ class HomeController extends Controller
         return view("frontend.home", compact('featured_products'));
     }
 
+    public function waterBottles()
+    {
+        $category= Product::where('status', '1')->take(15)->get();
+        return view("frontend.category", compact('category'));
+    }
+
     public function redirects()
     {
         $role_as=Auth::user()->role_as;

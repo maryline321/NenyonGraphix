@@ -47,7 +47,7 @@
       <td>{{ $item->id}}</td>
       <td>{{ $item->name}}</td>
       <td>{{ $item->description}}</td>
-      <td> <img src=" {{ asset('images/uploads/category/'.$item->image )}}" alt="image"></td>
+      <td> <img src=" {{ asset('images/uploads/category/'.$item->image )}}" alt="image" style="width:70px;height:70px;"></td>
 
       <td> 
          <a href="{{ url('edit-category/'. $item->id)}}" class="btn btn-primary">Edit</a >

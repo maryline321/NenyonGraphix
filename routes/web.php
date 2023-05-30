@@ -4,8 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
-
-
+use App\Http\Controllers\Frontend\FrontendController;
 
 Route::get("/",[HomeController::class,"index"]);
 
@@ -27,6 +26,7 @@ Route:: get("/edit-product/{id}", [ProductController::class,"editproduct"]);
 Route:: put("/update-product/{id}", [ProductController::class,"updateproduct"]);
 Route:: get("/delete-product/{id}", [ProductController::class,"deleteproduct"]);
 
+Route:: get("/water-bottles", [HomeController::class,"waterBottles"]);
 
 Route::middleware([
     'auth:sanctum',

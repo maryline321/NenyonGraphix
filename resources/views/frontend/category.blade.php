@@ -26,8 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.css"/>
-
 
 </head>
 
@@ -103,37 +101,27 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Welcome to <span>Nenyon Graphic</span></h1>
-      <h2 style="color: black;">Printing Services in Kenya. Get Noticed in and out of your business.</h2>
-      <div class="d-flex">
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
-      </div>
-    </div>
-  </section><!-- End Hero -->
-
   <main id="main">
 
     <!-- ======= Featured Services Section ======= -->
     <section id="team" class="team">
   <div class="section-title">
-    <h2>Featured Products</h2>
+    <h2>Mugs & Water Bottles
+</h2>
   </div>
   <div class="container" data-aos="fade-up">
     <div class="row gy-4">
       
-        @foreach ($featured_products as $product)
+        @foreach ($category as $cate)
         <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
           <div class="member">
             <div class="member-img">
-              <a href="#"><img src="{{ asset('images/uploads/product/'.$product->image) }}" alt="" style="max-width: 100%; height: auto;"></a>
+              <a href="#"><img src="{{ asset('public/images/uploads/category/'.$cate->image )}}" alt="cher"></a>
             </div>
             <div class="member-info">
-              <h4>{{ $product->name }}</h4>
-              <span class="float-start">{{ $product->selling_price }}</span>
-              <span class="float-end"> <s>{{ $product->original_price }}</s></span>
+              <h4>{{ $cate->name }}</h4>
+              <p>{{ $cate->description }}</p>
+              
 
             </div>
           </div>
@@ -315,34 +303,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/jquery.slick/1.8.1/slick.min.js"></script>
-
-<script>
-  $(document).ready(function() {
-    $('.carousel').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      dots: true,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      responsive: [
-        {
-          breakpoint: 992,
-          settings: {
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1
-          }
-        }
-      ]
-    });
-  });
-</script>
 
 </body>
 
