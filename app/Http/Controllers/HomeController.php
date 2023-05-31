@@ -44,7 +44,6 @@ class HomeController extends Controller
        {
         if(Product::where('slug', $product_slug)->exists())
         {   
-
             $products= Product::where('slug', $product_slug)->first();
             return view('frontend.products.view',compact('products'));
         }

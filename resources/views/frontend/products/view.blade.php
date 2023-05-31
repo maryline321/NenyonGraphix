@@ -113,7 +113,7 @@
       
         @foreach ($products as $product)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-        <a href="{{ url('category/'.$category->slug.'/'.$product->slug) }}">
+        <a href="{{ url('view-category/'.$category->slug.'/'.$product->slug) }}">
           <div class="member">
             <div class="member-img">
               <img src="{{ asset('images/uploads/product/'.$product->image) }}" alt="" style="max-width: 100%; height: auto;">
