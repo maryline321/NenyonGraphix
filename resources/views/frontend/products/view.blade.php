@@ -103,37 +103,85 @@
 
   <main id="main">
 
-    <!-- ======= Featured Services Section ======= -->
-    <section id="team" class="team">
-  <div class="section-title">
-    <h2>{{ $products->name}}</h2>
-  </div>
-  <div class="container" data-aos="fade-up">
-    <div class="row gy-4">
-      
-        @foreach ($products as $product)
-        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-        <a href="{{ url('view-category/'.$category->slug.'/'.$product->slug) }}">
-          <div class="member">
-            <div class="member-img">
-              <img src="{{ asset('images/uploads/product/'.$product->image) }}" alt="" style="max-width: 100%; height: auto;">
-            </div>
-            <div class="member-info">
-              <h4>{{ $product->name }}</h4>
-              <span class="float-start">{{ $product->selling_price }}</span>
-              <span class="float-end"> <s>{{ $product->original_price }}</s></span>
+ 
 
-            </div>
-          </div>
-        </a>
-        </div>
-        @endforeach
-
-    
+<div class="footer-newsletter">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <h4>Join Our Newsletter</h4>
+        
+        <form action="" method="post">
+          <input type="email" name="email"><input type="submit" value="Subscribe">
+        </form>
+      </div>
     </div>
   </div>
-</section>
-  
+</div>
+
+<div class="footer-top">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-6 footer-contact">
+        <h3>Nenyon Graphic<span>.</span></h3>
+        <p>
+          Luthuli Lane <br>
+          Nairobi<br>
+          Kenya <br><br>
+          <strong>Phone:</strong> 0752088519<br>
+          <strong>Email:</strong> cherchebet.com<br>
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Our Services</h4>
+        <ul>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing Materials</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Branding</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Mugs & Water Bottles</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Adhesive Label stickers</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="#">Letterheads</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links">
+        <h4>Our Social Networks</h4>
+        
+        <div class="social-links mt-3">
+          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Nenyon Graphic</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+   Designed by <a href="">Nenyon Graphic</a>
+  </div>
+</div>
+
+
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
