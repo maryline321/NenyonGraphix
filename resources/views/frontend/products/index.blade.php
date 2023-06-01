@@ -106,22 +106,22 @@
     <!-- ======= Featured Services Section ======= -->
     <section id="team" class="team">
   <div class="section-title">
-    <h2>{{ $category->name}}</h2>
+    <h2>Cher{{ $category->name}}</h2>
   </div>
   <div class="container" data-aos="fade-up">
     <div class="row gy-4">
       
-        @foreach ($products as $product)
+        @foreach ($products as $prod)
         <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-        <a href="{{ url('category/'.$category->slug.'/'.$product->slug) }}">
+        <a href="{{ url('view-category/'.$category->slug.'/'.$prod->slug) }}">
           <div class="member">
             <div class="member-img">
-              <img src="{{ asset('images/uploads/product/'.$product->image) }}" alt="" style="max-width: 100%; height: auto;">
+              <img src="{{ asset('images/uploads/product/'.$prod->image) }}" alt="" style="max-width: 100%; height: auto;">
             </div>
             <div class="member-info">
-              <h4>{{ $product->name }}</h4>
-              <span class="float-start">{{ $product->selling_price }}</span>
-              <span class="float-end"> <s>{{ $product->original_price }}</s></span>
+              <h4>{{ $prod->name }}</h4>
+              <span class="float-start">{{ $prod->selling_price }}</span>
+              <span class="float-end"> <s>{{ $prod->original_price }}</s></span>
 
             </div>
           </div>

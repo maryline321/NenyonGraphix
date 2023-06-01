@@ -53,6 +53,11 @@
 
                 </div>
                 <div class="col-md-6 mb-3">
+                    <label for="">Slug</label>
+                    <input type="text" class="form-control" name="slug">
+
+                </div>
+                <div class="col-md-6 mb-3">
                     <label for="">Small Description</label>
                     <input type="text" class="form-control" name="small_descrription">
 

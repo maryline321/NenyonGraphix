@@ -36,6 +36,7 @@ class ProductController extends Controller
 
         $product->category_id =$request->input('category_id');
         $product->name =$request->input('name');
+        $product->slug =$request->input('slug');
         $product->small_descrription =$request->input('small_descrription');
         $product->description =$request->input('description');
         $product->original_price =$request->input('original_price');
@@ -76,6 +77,7 @@ class ProductController extends Controller
         }
     
         $product->name =$request->input('name');
+        $product->slug =$request->input('slug');
         $product->small_descrription =$request->input('small_descrription');
         $product->description =$request->input('description');
         $product->original_price =$request->input('original_price');
