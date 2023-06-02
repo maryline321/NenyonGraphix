@@ -26,6 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="../../assets/css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
@@ -102,26 +103,99 @@
   </header><!-- End Header -->
 
   <main id="main">
+  <footer id="footer">
 
+<div class="footer-top">
+<div class="section-title">
+    <h2>Collections/ {{ $products->category->name }} / {{ $products->name}}</h2>
+  </div>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 footer-contact">
+      <div class="member">
+            <div class="member-img">
+              <img src="{{ asset('images/uploads/product/'.$products->image) }}" alt="" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="member-info">
+
+          
+
+            </div>
+          </div>
+      </div>
+
+      <div class="col-lg-6 col-md-6 footer-links">
+        <div class="member">
+        
+            <div class="member-info">
+              <h2 class="mb-0" style="font-size: 14px;">
+                {{ $products->name }}
+                @if($products->trending == '1')
+                <label class="float-end badge bg-danger trending_tag" style="font-size: 14px;">Trending</label>
+               @endif
+
+              </h2>
+              <hr>
+
+              <label class="me-3">Original price: <s>Ks {{ $products->original_price }}</s></label><br>
+              <label class="me-3">Selling price: Ks {{ $products->selling_price }}</label>
+
+              <p class="mt-3">
+              {{ $products->small_descrription }}
+              </p>
+              <hr>
+              @if($products->quantity > 0)
+                  <label class="badge bg-success">In Stock</label>
+                  @else
+                  <label class="badge bg-danger">Out of Stock</label>
+          @endif
+
+          <div class="row mt-2">
+
+            <div class="col-md-3">
+              <label for="Quantity">Quantity</label>
+              <div class="input-group text-center mb-3">
+                <span class="input-group-text decrement-btn">-</span>
+                <input type="text" name="quantity" value="1" class="form-control">
+                <span class="input-group-text increment-btn">+</span>
+              </div>
+
+            </div>
+
+            <div class="col-md-10">
+              <br>
+              <button type="button" class="btn btn-success me-3 float-start">Add to wishlist <i class="fa fa-heart"></i></button>
+              <button type="button" class="btn btn-primary me-3 float-start">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+
+            </div>
+
+          </div>
+
+            </div>
+          </div>
+
+
+      </div>
+      <hr>
+      <div class="member-info">
+        <h5>Description</h5>
+
+      {{ $products->description }}
+
+</div>
+
+    </div>
+  </div>
+</div>
+
+</footer><!-- End Footer -->
 
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
 
-    <div class="footer-newsletter">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <h4>Join Our Newsletter</h4>
-            
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <div class="footer-top">
       <div class="container">

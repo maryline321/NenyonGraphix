@@ -106,7 +106,7 @@
     <!-- ======= Featured Services Section ======= -->
     <section id="team" class="team">
   <div class="section-title">
-    <h2>Cher{{ $category->name}}</h2>
+    <h2>Collections/ {{ $category->name}}</h2>
   </div>
   <div class="container" data-aos="fade-up">
     <div class="row gy-4">
